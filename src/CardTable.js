@@ -1,4 +1,5 @@
 import React from "react";
+
 import PlayingCardList from "./PlayingCardList";
 import PokeDex from "./PokeDex";
 import "./CardTable.css";
@@ -7,9 +8,9 @@ import "./CardTable.css";
  * playing cards and pokemon. */
 function CardTable() {
   return (
-    <div className="CardTable">
+    <div className='CardTable'>
       <header>
-        <h1 className="CardTable-heading">Check out all my cards.</h1>
+        <h1 className='CardTable-heading'>Check out all my cards.</h1>
       </header>
       <main>
         <PlayingCardList />
