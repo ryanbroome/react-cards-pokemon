@@ -10,7 +10,11 @@ const useAxios = (url) => {
     setData([...data, { ...response.data, id: uuid() }]);
   };
 
-  return [data, getSetData];
+  const clearData = () => {
+    setData([]);
+  };
+
+  return [data, getSetData, clearData];
 };
 
 export default useAxios;
