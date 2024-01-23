@@ -1,0 +1,18 @@
+Question with last part:
+
+How would you write a custom hook to handle a static or dynamic AJAX request? 
+
+I feel like i understand abstracting logic out to another file and useState, useEffect, dependencies and triggering re-renders based on state and updating state but combining them and how to do so in real world examples and which script to place them in is still confusing.
+
+Looking at the solution the localStorage stuff makes sense, but the formatter() and format(data => ...) didn't really make sense to me what that's doing exactly. 
+
+I was able to write useFlip and useAxios for a static URL quickly without too much trouble. 
+
+Adding the dynamic url and trying to use the same custom hook for a (static vs dynamic url) really through me off. I wasn't sure if I should use the same useAxios(url) logic then try to construct the url when calling setData or addToData in PlayingCardList or Pokedex. This wasn't really working for me. 
+
+So I tried adding some if / else logic in my useAxios addData methods, but I was confused about what was being passed in to the method. I could get the cards to work or the pokemon to work with useAxios but not both. The closest I got was bascially the same as useAxios is written now, the difference being instead of defning two methods one for adding pokemon and one for adding a card. I defined an if / else statement with the if logic being if (!item) {const res = await axios.get(cardUrl)} else {const res = await axios.get(pokemonUrl + item + "/")}.
+
+When i did this it would work for the pokemon but not for the cards, the url would either be localhost/pokemonName or cards.api.../[object20%object]
+
+I'm not sure if what I got to work is really a good approach or not, the solution makes sense but it is far off what I was thinking. 
+
